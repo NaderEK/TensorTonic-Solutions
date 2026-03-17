@@ -9,10 +9,8 @@ def cross_entropy_loss(y_true, y_pred):
     if y_pred.shape[0] != y_true.shape[0]:
         return None
     N = y_true.shape[0]
-    correct_probs = []
+    correct_probs = np.asarray([probs[true] for true, probs in zip(y_true, y_pred)])
 
-    for true, probs in zip(y_true, y_pred):
-        correct_probs.append(probs[true])
     loss = - np.sum(np.log(correct_probs))/N
 
     return loss
