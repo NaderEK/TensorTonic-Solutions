@@ -28,7 +28,7 @@ class SimpleTokenizer:
         for text in texts:
             unique_words.update(text.split())
             
-        vocab = special_tokens + list(unique_words - set(special_tokens))
+        vocab = special_tokens + list(unique_words)
         
         self.word_to_id = {word: i for i, word in enumerate(vocab)}
         self.id_to_word = {i: word for i, word in enumerate(vocab)}
