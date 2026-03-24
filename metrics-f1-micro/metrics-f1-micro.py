@@ -15,5 +15,4 @@ def f1_micro(y_true, y_pred) -> float:
     FN = abs(TP - N)
 
     F1_score = 2*(TP)/(2*TP + FP + FN)
-    print(TP)
     return F1_score
